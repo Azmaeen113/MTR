@@ -101,7 +101,7 @@ const Tokenomics = () => {
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <div className="text-center">
                       <img 
-                        src={isDark ? "/mtr logo.png" : "/light mode logo.png"}
+                        src={isDark ? "/mtr-logo.png" : "/light-mode-logo.png"}
                         alt="MTR Token" 
                         className="h-16 w-16 mx-auto mb-2"
                       />

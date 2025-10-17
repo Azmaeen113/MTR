@@ -31,7 +31,7 @@ const Hero = () => {
           <div className="flex justify-center mb-4 overflow-hidden">
             <div className="h-[100px] w-[120px] md:h-[120px] md:w-[160px] overflow-hidden flex items-center justify-center">
               <img 
-                src={isDark ? "/mtr logo.png" : "/light mode logo.png"}
+                src={isDark ? "/mtr-logo.png" : "/light-mode-logo.png"}
                 alt="MTR Token Logo" 
                 className="h-[160px] w-[160px] md:h-[200px] md:w-[200px] animate-scale-in object-cover"
                 style={{ objectPosition: 'center' }}
@@ -53,11 +53,11 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button variant="hero" size="lg" className="text-lg">
+            <Button variant="luxury" size="lg" className="text-lg">
               Get Started
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button variant="outline" size="lg" className="text-lg">
+            <Button variant="outline" size="lg" className="text-lg border-primary text-primary hover:bg-primary hover:text-primary-foreground">
               Learn More
             </Button>
           </div>

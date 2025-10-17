@@ -81,10 +81,10 @@ const Benefits = () => {
               Join thousands of travelers who are already earning rewards and building their travel portfolio with MTR Token.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-primary text-primary-foreground rounded-lg font-semibold shadow-medium hover:shadow-strong hover:scale-105 transition-all duration-300">
+              <button className="px-8 py-4 luxury-button rounded-lg font-semibold shadow-medium hover:shadow-strong hover:scale-105 transition-all duration-300">
                 Get Started Now
               </button>
-              <button className="px-8 py-4 bg-gradient-accent text-accent-foreground rounded-lg font-semibold shadow-glow hover:scale-105 transition-all duration-300">
+              <button className="px-8 py-4 bg-gradient-accent text-accent-foreground rounded-lg font-semibold shadow-glow hover:scale-105 transition-all duration-300 gold-glow">
                 View Partnerships
               </button>
             </div>

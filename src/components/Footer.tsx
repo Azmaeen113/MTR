@@ -48,7 +48,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <img 
-                src={isDark ? "/logo background transparent.png" : "/light mode logo.png"}
+                src={isDark ? "/logo-background-transparent.png" : "/light-mode-logo.png"}
                 alt="MTR Token Logo" 
                 className="h-10 w-10"
               />
@@ -153,7 +153,7 @@ const Footer = () => {
                 placeholder="Enter your email"
                 className="flex-1"
               />
-              <Button variant="hero">Subscribe</Button>
+              <Button variant="luxury">Subscribe</Button>
             </div>
           </div>
         </div>

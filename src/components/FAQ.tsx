@@ -84,7 +84,7 @@ const FAQ = () => {
             <p className="text-muted-foreground mb-6">
               Our support team is here to help you 24/7
             </p>
-            <button className="px-6 py-3 bg-gradient-primary text-primary-foreground rounded-lg font-semibold shadow-medium hover:shadow-strong hover:scale-105 transition-all duration-300">
+            <button className="px-6 py-3 luxury-button rounded-lg font-semibold shadow-medium hover:shadow-strong hover:scale-105 transition-all duration-300">
               Contact Support
             </button>
           </div>

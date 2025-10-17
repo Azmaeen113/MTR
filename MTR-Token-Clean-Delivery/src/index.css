@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Black & Gold Luxury Theme - Day Mode */
+    --background: 0 0% 5.5%; /* #0E0E0E - soft black */
+    --foreground: 0 0% 96%; /* #F5F5F5 - off-white */
+
+    --card: 0 0% 8%; /* Darker black for cards */
+    --card-foreground: 0 0% 96%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 96%;
+
+    /* Rich gold primary */
+    --primary: 51 100% 50%; /* #FFD700 - bright gold */
+    --primary-foreground: 0 0% 5.5%;
+    --primary-hover: 51 100% 45%;
+
+    /* Dark goldenrod secondary */
+    --secondary: 43 74% 49%; /* #B8860B - dark goldenrod */
+    --secondary-foreground: 0 0% 96%;
+    --secondary-hover: 43 74% 55%;
+
+    --muted: 0 0% 12%; /* Slightly lighter black */
+    --muted-foreground: 0 0% 65%; /* Muted text */
+
+    /* Gold accent with glow */
+    --accent: 51 100% 50%;
+    --accent-foreground: 0 0% 5.5%;
+    --accent-glow: 51 100% 60%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 96%;
+
+    --border: 0 0% 18%; /* Subtle borders */
+    --input: 0 0% 18%;
+    --ring: 51 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Luxury gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(51 100% 50%) 0%, hsl(43 74% 49%) 50%, hsl(35 100% 55%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(43 74% 49%) 0%, hsl(43 74% 55%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(51 100% 50%) 0%, hsl(35 100% 55%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 5.5%) 0%, hsl(0 0% 8%) 50%, hsl(0 0% 12%) 100%);
+    
+    /* Glass effect */
+    --glass-bg: hsla(0, 0%, 8%, 0.4);
+    --glass-border: hsla(51, 100%, 50%, 0.2);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 24px hsla(0, 0%, 0%, 0.3);
+    --shadow-medium: 0 8px 32px hsla(0, 0%, 0%, 0.4);
+    --shadow-strong: 0 16px 48px hsla(0, 0%, 0%, 0.5);
+    --shadow-glow: 0 0 32px hsla(51, 100%, 50%, 0.4);
+  }
+
+  .dark {
+    /* Black & Gold Luxury Theme - Night Mode */
+    --background: 0 0% 0%; /* Pure black */
+    --foreground: 43 30% 75%; /* Muted gold #C5A55A */
+
+    --card: 0 0% 4%; /* Very dark cards */
+    --card-foreground: 43 30% 75%;
+
+    --popover: 0 0% 4%;
+    --popover-foreground: 43 30% 75%;
+
+    /* Bright metallic gold */
+    --primary: 51 100% 50%; /* #FFD700 */
+    --primary-foreground: 0 0% 0%;
+    --primary-hover: 51 100% 60%;
+
+    /* Light goldenrod */
+    --secondary: 43 74% 60%; /* Lighter goldenrod */
+    --secondary-foreground: 0 0% 0%;
+    --secondary-hover: 43 74% 70%;
+
+    --muted: 0 0% 8%; /* Very dark muted */
+    --muted-foreground: 43 20% 60%; /* Muted gold text */
+
+    /* Gold accent with enhanced glow */
+    --accent: 51 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    --accent-glow: 51 100% 70%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 43 30% 75%;
+
+    --border: 0 0% 12%; /* Subtle borders */
+    --input: 0 0% 12%;
+    --ring: 51 100% 50%;
+
+    /* Enhanced luxury gradients with glow */
+    --gradient-primary: linear-gradient(135deg, hsl(51 100% 50%) 0%, hsl(43 74% 60%) 50%, hsl(35 100% 65%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(43 74% 60%) 0%, hsl(43 74% 70%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(51 100% 50%) 0%, hsl(35 100% 65%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 0%) 0%, hsl(0 0% 4%) 50%, hsl(0 0% 8%) 100%);
+    
+    --glass-bg: hsla(0, 0%, 4%, 0.6);
+    --glass-border: hsla(51, 100%, 50%, 0.3);
+    
+    --shadow-soft: 0 4px 24px hsla(0, 0%, 0%, 0.5);
+    --shadow-medium: 0 8px 32px hsla(0, 0%, 0%, 0.6);
+    --shadow-strong: 0 16px 48px hsla(0, 0%, 0%, 0.7);
+    --shadow-glow: 0 0 40px hsla(51, 100%, 50%, 0.6);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glass effect cards */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-accent-text {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Floating animation */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  /* Glow effect */
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Pulse animation */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+
+  /* Gold shimmer animation */
+  .gold-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gold-shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsla(51, 100%, 50%, 0.4), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  /* Gold glow effect */
+  .gold-glow {
+    box-shadow: 0 0 20px hsla(51, 100%, 50%, 0.5);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .gold-glow:hover {
+    box-shadow: 0 0 30px hsla(51, 100%, 50%, 0.7);
+  }
+
+  /* Luxury button effects */
+  .luxury-button {
+    position: relative;
+    background: linear-gradient(135deg, hsl(51 100% 50%) 0%, hsl(43 74% 49%) 100%);
+    border: 1px solid hsl(51 100% 50%);
+    color: hsl(0 0% 5.5%);
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .luxury-button:hover {
+    background: linear-gradient(135deg, hsl(51 100% 60%) 0%, hsl(43 74% 55%) 100%);
+    box-shadow: 0 0 25px hsla(51, 100%, 50%, 0.6);
+    transform: translateY(-2px);
+  }
+
+  .luxury-button:active {
+    transform: translateY(0);
+  }
+
+  /* Dark mode luxury button */
+  .dark .luxury-button {
+    background: linear-gradient(135deg, hsl(51 100% 50%) 0%, hsl(43 74% 60%) 100%);
+    color: hsl(0 0% 0%);
+  }
+
+  .dark .luxury-button:hover {
+    background: linear-gradient(135deg, hsl(51 100% 60%) 0%, hsl(43 74% 70%) 100%);
+    box-shadow: 0 0 30px hsla(51, 100%, 50%, 0.8);
+  }
+}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/use-theme";
 
@@ -15,10 +15,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleTheme = () => {
-    document.documentElement.classList.toggle("dark");
-  };
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -51,7 +47,7 @@ const Navbar = () => {
             className="flex items-center gap-2 cursor-pointer group"
           >
             <img 
-              src={isDark ? "/logo background transparent.png" : "/light mode logo.png"}
+              src={isDark ? "/logo-background-transparent.png" : "/light-mode-logo.png"}
               alt="MTR Token Logo" 
               className="h-10 w-10 transition-transform duration-300 group-hover:scale-110"
             />
@@ -73,17 +69,8 @@ const Navbar = () => {
 
           {/* Right side actions */}
           <div className="flex items-center gap-4">
-            <Button variant="hero" size="sm" className="hidden md:inline-flex">
+            <Button variant="luxury" size="sm" className="hidden md:inline-flex">
               Get Started
-            </Button>
-            
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              className="rounded-full"
-            >
-              {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
 
             {/* Mobile menu button */}
@@ -111,7 +98,7 @@ const Navbar = () => {
               </button>
             ))}
             <div className="px-4 pt-2">
-              <Button variant="hero" className="w-full">
+              <Button variant="luxury" className="w-full">
                 Get Started
               </Button>
             </div>

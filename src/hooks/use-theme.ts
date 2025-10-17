@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 
 export const useTheme = () => {
   const [isDark, setIsDark] = useState(() => {
-    return document.documentElement.classList.contains("dark");
+    // Ensure dark mode is always active
+    document.documentElement.classList.add("dark");
+    return true;
   });
 
   useEffect(() => {
